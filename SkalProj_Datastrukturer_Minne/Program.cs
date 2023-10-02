@@ -350,17 +350,22 @@ namespace SkalProj_Datastrukturer_Minne
                 {
                     stack.Pop();  // Removing from the stack
                     valid = true;
-                }
+                } 
                 if (ch == '}' && stack.Count != 0 && stack.Peek() == '{')
                 {
                     stack.Pop();  // Removing from the stack
                     valid = true;
-                }
+                } 
                 if (ch == ']' && stack.Count != 0 && stack.Peek() == '[')
                 {
                     stack.Pop();  // Removing from the stack
                     valid = true;
                 }
+                if (stack.Count != 0)
+                {
+                    valid = false;
+                }
+
             }
             return valid;
         }
